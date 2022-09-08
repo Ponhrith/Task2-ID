@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
     val age = readLine()
     println("Please enter your gender: ")
     val gender = readLine()
-    println("Please enter your height: ")s
+    println("Please enter your height: ")
     val height = readLine()
     println("Please enter your address: ")
     val address = readLine()

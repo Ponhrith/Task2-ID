@@ -23,6 +23,7 @@ class UserScreen {
         person.contact = readLine() ?: "Default Contact"
 
         FileHelper.writeData(file, person.toCSVData())
+        FileHelper.readData(file)
     }
 
     fun insertUserOperation(file: File) {

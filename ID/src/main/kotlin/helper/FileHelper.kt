@@ -3,6 +3,9 @@ package helper
 import java.io.BufferedWriter
 import java.io.File
 import java.io.FileWriter
+import java.io.FileReader
+import java.io.BufferedReader
+
 
 object FileHelper {
 
@@ -28,4 +31,15 @@ object FileHelper {
         bufferedWriter.write(content)
         bufferedWriter.close()
     }
+
+    fun readData(file: File){
+        val fileReader = FileReader(file)
+        val bufferedReader = BufferedReader(fileReader)
+        /*bufferedReader.read(content)*/
+        for (line in bufferedReader.lines()){
+            println(line)
+        }
+        bufferedReader.close()
+    }
+
 }

@@ -6,7 +6,6 @@ import java.io.FileWriter
 import java.io.FileReader
 import java.io.BufferedReader
 
-
 object FileHelper {
 
     private const val HEADER = "Name,Age,Gender,Height,Address,Contact"
@@ -41,5 +40,4 @@ object FileHelper {
         }
         bufferedReader.close()
     }
-
 }

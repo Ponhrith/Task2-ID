@@ -1,6 +1,6 @@
 package model
 
 data class Options(
-    var choice: String = "",
+    var userChoice: String = "",
 
 )

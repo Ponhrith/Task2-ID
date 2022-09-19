@@ -11,4 +11,22 @@ data class Person(
     fun toCSVData() : String{
         return "\n$name,$age,$gender,$height,$address,$contact"
     }
+
+    companion object {
+        fun getAgeFromInput() : Int {
+            return kotlin.runCatching {
+                readLine()?.toInt() ?: 0
+            }.onFailure {
+                print("Invalid input age, please input age again: ")
+            }.getOrElse { getAgeFromInput() }
+        }
+
+        fun getHeightFromInput(): Float {
+            return kotlin.runCatching{
+                readLine()?.toFloat() ?: 0F
+            }.onFailure{
+                print("Invalid input height, please input the height again: ")
+            }.getOrElse{getHeightFromInput()}
+        }
+    }
 }

@@ -1,5 +1,8 @@
 package model
 
+import helper.InputHelper.getFloatFromInput
+import helper.InputHelper.getIntFromInput
+
 data class Person(
     var name: String = "",
     var age: Int = 0,
@@ -13,20 +16,11 @@ data class Person(
     }
 
     companion object {
-        fun getAgeFromInput() : Int {
-            return kotlin.runCatching {
-                readLine()?.toInt() ?: 0
-            }.onFailure {
-                print("Invalid input age, please input age again: ")
-            }.getOrElse { getAgeFromInput() }
-        }
+        fun getAgeFromInput() : Int = getIntFromInput(Person::age.name)
 
-        fun getHeightFromInput(): Float {
-            return kotlin.runCatching{
-                readLine()?.toFloat() ?: 0F
-            }.onFailure{
-                print("Invalid input height, please input the height again: ")
-            }.getOrElse{getHeightFromInput()}
-        }
+        fun getHeightFromInput(): Float = getFloatFromInput(Person::height.name)
+
     }
+
+
 }

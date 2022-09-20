@@ -1,5 +1,8 @@
 package model
 
+import helper.InputHelper.getFloatFromInput
+import helper.InputHelper.getIntFromInput
+
 data class Person(
     var name: String = "",
     var age: Int = 0,
@@ -11,4 +14,13 @@ data class Person(
     fun toCSVData() : String{
         return "\n$name,$age,$gender,$height,$address,$contact"
     }
+
+    companion object {
+        fun getAgeFromInput() : Int = getIntFromInput(Person::age.name)
+
+        fun getHeightFromInput(): Float = getFloatFromInput(Person::height.name)
+
+    }
+
+
 }

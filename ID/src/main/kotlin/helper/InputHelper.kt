@@ -18,4 +18,6 @@ object InputHelper {
             print("Invalid input $fieldName, please input the $fieldName again: ")
         }.getOrElse{ getFloatFromInput(fieldName) }
     }
+
+
 }

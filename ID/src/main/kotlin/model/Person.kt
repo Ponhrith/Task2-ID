@@ -1,5 +1,6 @@
 package model
 
+import helper.Extension.addSpace
 import helper.InputHelper.getFloatFromInput
 import helper.InputHelper.getIntFromInput
 
@@ -13,6 +14,11 @@ data class Person(
 ) {
     fun toCSVData() : String{
         return "\n$name,$age,$gender,$height,$address,$contact"
+    }
+
+    fun print() : String {
+        return "${name.addSpace()}${age.addSpace()}${gender.addSpace()}" +
+                "${height.addSpace()}${address.addSpace()}${contact.addSpace()}"
     }
 
     companion object {
